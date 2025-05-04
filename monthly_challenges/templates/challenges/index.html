@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<ul>
+  {% for month in obejcts_list %}
+    <li><a href="{% url 'challenges:monthly-challenges' month %}">{{ forloop.counter }}. {{ month }}</a></li>
+  {% endfor %}
+</ul>
+</body>
+</html>

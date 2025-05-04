@@ -1,4 +1,5 @@
-from django.http import HttpResponse, HttpRequest, HttpResponseNotFound
+from django.http import HttpResponse, HttpRequest, HttpResponseNotFound, \
+    Http404
 from django.shortcuts import render, redirect
 from django.views.decorators.http import require_http_methods, require_safe
 from django.urls import reverse
@@ -32,7 +33,7 @@ def monthly_challenges(request: HttpRequest, month: str) -> HttpResponse:
             'challenge': MONTHLY_CHALLENGES[month]
         })
     except KeyError:
-        return HttpResponseNotFound('This month is not supported')
+        raise Http404('This month is not supported')
 
 @require_safe
 def monthly_challenges_num(request: HttpRequest, month: int) -> HttpResponse:

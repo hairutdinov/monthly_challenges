@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+
 {% block title %}Monthly Challenges{% endblock %}
+
 {% block content %}
   <h1>{{ month|title }}</h1>
-    {% if challenge %}
-      <h2>{{ challenge }}</h2>
-    {% else %}
-      <p>There is not challenge for this month</p>
-    {% endif %}
+  {% if challenge %}
+    <h2>{{ challenge }}</h2>
+  {% else %}
+    <p>There is not challenge for this month</p>
+  {% endif %}
 {% endblock %}

@@ -1,0 +1,23 @@
+[tool.flake8]
+ignore = [
+    "W503",
+    "D100",
+    "D205",
+    "D401",
+]
+exclude = [
+    "tests/",
+    "venv/",
+    "env/",
+]
+max-complexity = 10
+
+[tool.black]
+line-length = 79
+skip-string-normalization = true
+
+[tool.isort]
+profile = "black"
+
+[tool.djlint]
+indent = 2

@@ -28,6 +28,7 @@ def index(request: HttpRequest) -> HttpResponse:
 def monthly_challenges(request: HttpRequest, month: str) -> HttpResponse:
     try:
         return render(request, 'challenges/challenge.html', {
+            'month': month,
             'challenge': MONTHLY_CHALLENGES[month]
         })
     except KeyError:

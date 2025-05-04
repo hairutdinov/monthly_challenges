@@ -5,6 +5,11 @@
   <title>Monthly Challenges</title>
 </head>
 <body>
-<h2>{{ challenge }}</h2>
+  <h1>{{ month|title }}</h1>
+  {% if challenge %}
+    <h2>{{ challenge }}</h2>
+  {% else %}
+    <p>There is not challenge for this month</p>
+  {% endif %}
 </body>
 </html>
